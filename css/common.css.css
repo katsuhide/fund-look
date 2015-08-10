@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Limelight);
+/* line 6, ../sass/common.css.scss */
+.logo-block {
+  font-family: 'Limelight', cursive; }
+
+/* line 10, ../sass/common.css.scss */
+.body {
+  font-family: 'Open Sans', sans-serif; }
