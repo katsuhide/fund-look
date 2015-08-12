@@ -13,8 +13,7 @@
     <title>Fund Look Management - Trade Management - </title>
   </head>
   <body>
-    <!-- <div class="animsition"> -->
-    <div class="">
+    <div class="animsition">
       <header>
         <nav>
           <ul id="slide-out" class="side-nav">
@@ -60,8 +59,8 @@
                 <p>Are you sure you import the data?</p>
               </div>
               <div class="modal-footer">
-                <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-                <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
               </div>
             </div>
           </div>
@@ -147,10 +146,8 @@
       </div>
       <!-- btn -->
       <div class="section">
-      <div class="btn" data-cta-target=".js-dialog" style="background: #4A90E2">Click for awesomeness</div>
         <div class="row">
-          <!-- <a class="waves-effect waves-light btn-large right" data-cta-target=".js-dialog" ><i class="material-icons left">play_circle_outline</i>CHECK</a> -->
-          <a class="waves-effect waves-light btn-large right"><i class="material-icons left">play_circle_outline</i>CHECK</a>
+          <a class="waves-effect waves-light btn-large right" data-cta-target=".js-dialog" ><i class="material-icons left">play_circle_outline</i>CHECK</a>
         </div>
       </div>
       <!-- ent of btn -->
@@ -160,12 +157,13 @@
         <li><a href="#!">Modify</a></li>
       </ul>
       <!-- end of btn-list -->
-      <div class="js-dialog  modal  dialog" style="text-align: center;">
+      <div class="js-dialog  cta-modal  dialog aling-center">
         <span class="modal-close-btn"></span>
-        <h3>Do you think this is Awesome?</h3>
-        <br>
-        <a onclick="closeShowingModal(); return;" class="btn  btn--blue">Yes</a>
-        <a onclick="closeShowingModal(); return;" class="btn  btn--blue">No</a>
+        <h5 class="modal-msg">Are you sure you check the data?</h5>
+        <div class="row">
+        <a onclick="closeShowingModal(); return;" class="col s3 offset-s3 waves-effect waves-light btn-large modal-btn">Yes</a>
+        <a onclick="closeShowingModal(); return;" class="col s3  waves-effect waves-light btn-large modal-btn">No</a>
+        </div>
       </div>
       </main>
       <footer>
@@ -178,31 +176,25 @@
     <!-- animsition -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.js"></script>
     <!-- cta.js -->
-    <script type="text/javascript" src="C:\github\fund-look\bower_components\cta\dist\cta.min.js"></script>
+    <script type="text/javascript" src="bower_components/cta/dist/cta.js"></script>
     <!-- javascript -->
     <script>
     var closeFn;
     function closeShowingModal() {
-    console.log("2");
-    var showingModal = document.querySelector('.modal.show');
+    var showingModal = document.querySelector('.cta-modal.show');
     if (!showingModal) return;
     showingModal.classList.remove('show');
     document.body.classList.remove('disable-mouse');
-    console.log("3");
     if (closeFn) {
-    console.log("4");
     closeFn();
     closeFn = null;
     }
     }
-    console.log("5");
     document.addEventListener('click', function (e) {
     var target = e.target;
     if (target.dataset.ctaTarget) {
-    console.log("6");
     closeFn = cta(target, document.querySelector(target.dataset.ctaTarget), { relativeToWindow: true }, function showModal(modal) {
     modal.classList.add('show');
-    console.log("7");
     document.body.classList.add('disable-mouse');
     });
     }
@@ -228,24 +220,24 @@
     belowOrigin: false // Displays dropdown below the button
     });
     $(document).ready(function() {
-    // $('select').material_select();
-    // $('.modal-trigger').leanModal();
-    // $(".animsition").animsition({
-    // inClass               :   'fade-in-left-lg',
-    // outClass              :   'fade-out-left-lg',
-    // inDuration            :    700,
-    // outDuration           :    700,
-    // linkElement           :   '.animsition-link',
-    // loading               :    true,
-    // loadingParentElement  :   'body', //animsition wrapper element
-    // loadingClass          :   'animsition-loading',
-    // unSupportCss          : [  'animation-duration',
-    // '-webkit-animation-duration',
-    // '-o-animation-duration'   ],
-    // overlay               :   false,
-    // overlayClass          :   'animsition-overlay-slide',
-    // overlayParentElement  :   'body'
-    // });
+    $('select').material_select();
+    $('.modal-trigger').leanModal();
+    $(".animsition").animsition({
+    inClass               :   'fade-in-left-lg',
+    outClass              :   'fade-out-left-lg',
+    inDuration            :    700,
+    outDuration           :    700,
+    linkElement           :   '.animsition-link',
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [  'animation-duration',
+    '-webkit-animation-duration',
+    '-o-animation-duration'   ],
+    overlay               :   false,
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+    });
     });
     </script>
   </body>

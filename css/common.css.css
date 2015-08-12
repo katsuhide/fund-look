@@ -5,5 +5,90 @@
   font-family: 'Limelight', cursive; }
 
 /* line 10, ../sass/common.css.scss */
-.body {
+body {
   font-family: 'Open Sans', sans-serif; }
+
+/* line 14, ../sass/common.css.scss */
+.screen-title {
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
+
+/* line 20, ../sass/common.css.scss */
+table .btn-floating i {
+  line-height: 27px;
+  font-size: 0.9rem; }
+/* line 25, ../sass/common.css.scss */
+table .btn-floating {
+  width: 27px;
+  height: 27px;
+  line-height: 27px; }
+/* line 31, ../sass/common.css.scss */
+table .dropdown-content li {
+  width: 200px; }
+
+/* line 36, ../sass/common.css.scss */
+.dropdown-content li > a, .dropdown-content li > span {
+  font-size: 1rem; }
+
+/* line 40, ../sass/common.css.scss */
+.cta-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  background: #EA006F;
+  color: white;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease; }
+
+/* line 56, ../sass/common.css.scss */
+.modal-msg {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+/* line 60, ../sass/common.css.scss */
+.modal-btn {
+  margin-right: 10px;
+  margin-left: 10px; }
+
+/* line 65, ../sass/common.css.scss */
+.modal-close-btn {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(../bower_components/cta/img/close.png) no-repeat center;
+  width: 32px;
+  height: 32px;
+  padding: 32px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s ease; }
+
+/* line 79, ../sass/common.css.scss */
+.modal-close-btn:hover {
+  opacity: 1; }
+
+/* line 83, ../sass/common.css.scss */
+.cta-modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; }
+
+/* line 89, ../sass/common.css.scss */
+.dialog {
+  background: #eceff1;
+  color: #263238;
+  min-width: 300px;
+  left: 50%;
+  right: auto;
+  top: 30%;
+  bottom: auto;
+  box-shadow: 0 0 0 3000px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%); }

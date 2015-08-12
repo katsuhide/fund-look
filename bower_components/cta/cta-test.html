@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>cta.js - Animate your 'action-to-effect' paths!</title>
+		<meta name="author" content="Kushagra Gour">
+		<meta name="description" content="Animate any element onto another element.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="image_src" href="hint.png"/>
+		<link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<style>
+		* {
+		box-sizing: border-box;
+		}
+		html, body {
+		font-family: 'Open Sans', sans-serif;
+		background: #3F51B5;
+		color: white;
+		text-align: center;
+		margin: 0;
+		}
+		p, .content-wrap {
+		max-width: 770px;
+		margin: 0 auto;
+		}
+		p {
+		font-size: 24px;
+		margin: 0 auto 30px;
+		padding: 0 40px;
+		}
+		h1, h2 { font-weight: bold; }
+		h2 {
+		font-size: 40px;
+		}
+		a { color: #FFD200; }
+		a:hover { text-decoration: none; }
+		section {
+		padding: 30px 0;
+		}
+		.modal {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 40px;
+		background: #EA006F;
+		color: white;
+		z-index: 1;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transition: 200ms ease;
+		}
+		.modal-close-btn {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: url(img/close.png) no-repeat center;
+		width: 32px;
+		height: 32px;
+		padding: 32px;
+		opacity: 0.8;
+		cursor: pointer;
+		transition: 0.3s ease;
+		}
+		.modal-close-btn:hover {
+		opacity: 1;
+		}
+		.modal.show {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		}
+		.dialog {
+		background: #4A90E2;
+		min-width: 300px;
+		left: 50%;
+		right: auto;
+		top: 30%;
+		bottom: auto;
+		box-shadow: 0 0 0 3000px rgba(0,0,0,0.4);
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		}
+		</style>
+	</head>
+	<body>
+		<section class="section--white">
+			<div class="btn" data-cta-target=".js-dialog" style="background: #4A90E2">Click for awesomeness</div>
+		</section>
+		<div class="js-dialog  modal  dialog" style="text-align: center;">
+			<span class="modal-close-btn"></span>
+			<h3>Do you think this is Awesome?</h3>
+			<br>
+			<a onclick="closeShowingModal(); return;" class="btn  btn--blue">Yes</a>
+			<a onclick="closeShowingModal(); return;" class="btn  btn--blue">No</a>
+		</div>
+		<script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+		<script src="src/cta.js"></script>
+		<script>
+		var closeFn;
+		function closeShowingModal() {
+		console.log("2");
+		var showingModal = document.querySelector('.modal.show');
+		if (!showingModal) return;
+		showingModal.classList.remove('show');
+		document.body.classList.remove('disable-mouse');
+		console.log("3");
+		if (closeFn) {
+		console.log("4");
+		closeFn();
+		closeFn = null;
+		}
+		}
+		console.log("5");
+		document.addEventListener('click', function (e) {
+		var target = e.target;
+		if (target.dataset.ctaTarget) {
+		console.log("6");
+		closeFn = cta(target, document.querySelector(target.dataset.ctaTarget), { relativeToWindow: true }, function showModal(modal) {
+		modal.classList.add('show');
+		console.log("7");
+		document.body.classList.add('disable-mouse');
+		});
+		}
+		else if (target.classList.contains('modal-close-btn')) {
+		closeShowingModal();
+		}
+		});
+		document.addEventListener('keyup', function (e) {
+		if (e.which === 27) {
+		closeShowingModal();
+		}
+		})
+		</script>
+	</body>
+</html>

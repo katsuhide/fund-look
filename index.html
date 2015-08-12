@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- animsition -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.css">
+    <!-- original -->
     <link type="text/css" rel="stylesheet" href="css/common.css.css">
     <title>Fund Look Management</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container animsition">
       <div class="row logo-block">
         <h1 class="center-align logo">Fund look Management</h1>
       </div>
@@ -18,7 +21,7 @@
         <div class="input-field col s4 offset-s4">
           <i class="material-icons prefix">account_circle</i>
           <input id="name" type="text" required>
-          <label for="name">User Name</label>
+          <label for="name">User ID</label>
         </div>
         <div class="input-field col s4 offset-s4">
           <i class="material-icons prefix">https</i>
@@ -27,13 +30,36 @@
         </div>
       </div>
       <div class="row">
-        <a class="col s2 offset-s5 waves-effect waves-light btn-large" href="test.html">Login in</a>
+        <a class="col s2 offset-s5 waves-effect waves-light btn-large animsition-link" href="trade.html">login</a>
       </div>
     </div>
-
     <!-- jQuery -->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Materialize -->
     <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <!-- animsition -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.js"></script>
+    <!-- javascript -->
+    <script>
+    $(document).ready(function() {
+    $(".animsition").animsition({
+    // inClass               :   'rotate-in',
+    outClass              :   'rotate-out-lg',
+    // outClass              :   'flip-out-y',
+    inDuration            :    1000,
+    outDuration           :    500,
+    linkElement           :   '.animsition-link',
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [  'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'   ],
+    overlay               :   false,
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+    });
+    });
+    </script>
   </body>
 </html>

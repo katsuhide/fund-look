@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- animsition -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.css">
+    <!-- original -->
+    <link type="text/css" rel="stylesheet" href="css/common.css.css">
+    <title>Fund Look Management - External Data Management - </title>
+  </head>
+  <body>
+    <div class="animsition">
+      <header>
+        <nav>
+          <ul id="slide-out" class="side-nav">
+            <li><a class="waves-effect truncate animsition-link" href="trade.html">Trade Data Management</a></li>
+            <li><a class="waves-effect truncate animsition-link" href="external.html">External Data Management</a></li>
+            <li><a class="waves-effect truncate animsition-link" href="#!">Name-based Aggregation</a></li>
+            <li><a class="waves-effect truncate animsition-link" href="#!">Master Data Management</a></li>
+            <li><a class="waves-effect truncate animsition-link" href="#!">Result</a></li>
+            <li><a class="waves-effect truncate animsition-link" href="#!">Interface</a></li>
+            <li><a class="waves-effect truncate animsition-link" href="#!">View / Export Data</a></li>
+            <li><a class="waves-effect truncate animsition-link" href="#!">User Management</a></li>
+            <li><a class="waves-effect truncate animsition-link" data-animsition-out="rotate-out-lg" data-animsition-out-duration="500"href="index.html">Logout</a></li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo center logo-block">Fund Look Management</a>
+          </div>
+        </nav>
+      </header>
+      <main class="container">
+      <h4 class="screen-title">External Data Management</h4>
+      <!-- cross -->
+      <h5>Cross Reference</h5>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="row">
+          <h5 class="col s5 offset-s1">Maintenance before the Fund Table </h5>
+          <a class="col s2 offset-s1 waves-effect waves-light btn-large" href="#!">execute</a>
+        </div>
+        <div class="row">
+          <h5 class="col s5 offset-s1">Key Item / Name-based Aggregation</h5>
+          <a class="col s2 offset-s1 waves-effect waves-light btn-large" href="#!">modify</a>
+        </div>
+      </div>
+      <!-- end of cross -->
+      <!-- import external -->
+      <h5>External / Additional Data Import</h5>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="row">
+          <form class="col s8 offset-s1">
+            <div class="file-field input-field">
+              <div class="btn waves-effect waves-light">
+                <span>File</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input id="file-path" class="file-path" type="text" value="hoge.xlsx">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="row">
+          <div class="col s8 offset-s1">
+            <a id='file-import' class="waves-effect waves-light btn-large right"><i class="material-icons left">play_circle_outline</i>import</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s8 offset-s1">
+            <a id='file-import' class="waves-effect waves-light btn-large right"><i class="material-icons left">zoom_in</i>view</a>
+          </div>
+        </div>
+      </div>
+      <!-- end of import external -->
+      </main>
+      <footer>
+      </footer>
+    </div>
+    <!-- jQuery -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Materialize -->
+    <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <!-- animsition -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.js"></script>
+    <!-- javascript -->
+    <script typpe="text/javascript">
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+    $('.dropdown-button').dropdown({
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: false, // Does not change width of dropdown to that of the activator
+    hover: true, // Activate on hover
+    gutter: 0, // Spacing from edge
+    belowOrigin: false // Displays dropdown below the button
+    }
+    );
+    $(document).ready(function() {
+    $('select').material_select();
+    $(".animsition").animsition({
+    inClass               :   'fade-in-left-lg',
+    outClass              :   'fade-out-left-lg',
+    inDuration            :    700,
+    outDuration           :    700,
+    linkElement           :   '.animsition-link',
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [  'animation-duration',
+    '-webkit-animation-duration',
+    '-o-animation-duration'   ],
+    overlay               :   false,
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+    });
+
+    });
+    </script>
+  </body>
+</html>
