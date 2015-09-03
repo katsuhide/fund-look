@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- animsition -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.css">
+    <!-- original -->
+    <link type="text/css" rel="stylesheet" href="css/common.css.css">
+    <title>Color Thema</title>
+  </head>
+  <body>
+    <header id="header" class="">
+      <nav>
+        <ul id="slide-out" class="side-nav">
+          <li><a class="waves-effect truncate" href="#">Deafault</a></li>
+          <li><a class="waves-effect truncate" href="#">Light Gray</a></li>
+          <li><a class="waves-effect truncate" href="#">Dark Gray</a></li>
+          <li><a class="waves-effect truncate" >Logout</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">Color Thema</a>
+          <ul class="right">
+            <li><a href="#"><i class="material-icons">search</i></a></li>
+            <li><a href="#"><i class="material-icons">view_module</i></a></li>
+            <li><a href="#"><i class="material-icons">refresh</i></a></li>
+            <li><a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons">more_vert</i></a></li>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!">First</a></li>
+              <li><a href="#!">Second</a></li>
+              <li><a href="#!">Third</a></li>
+              <li><a href="#!">Fourth</a></li>
+            </ul>
+          </ul>
+        </div>
+      </nav>
+      </header><!-- /header -->
+      <main class="container">
+      <div class="divider"></div>
+      <div class="section" id="typograph">
+        <h3>Typography</h3>
+        <h5>Header</h5>
+        <div class="card-panel  grey lighten-3">
+          <h3>Heading h3</h3>
+          <h4>Heading h4</h4>
+          <h5>Heading h5</h5>
+          <h6>Heading h6</h6>
+        </div>
+        <div class="divider"></div>
+        <h5>Blockquotes</h5>
+        <blockquote>
+          This is an example quotation that uses the blockquote tag.
+        </blockquote>
+        <div class="divider"></div>
+        <h5>Flow Text</h5>
+        <a class="waves-effect waves-light btn" id="flow-text-btn">Toggle Flow Text</a>
+        <div class="card-panel">
+          <p id="flow-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,</p>
+        </div>
+        <div class="divider"></div>
+        </div><!-- /typograph-->
+        <div class="section" id="table">
+          <h3>Table</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th data-field="id">Name</th>
+                  <th data-field="name">Item Name</th>
+                  <th data-field="price">Item Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>$0.87</td>
+                </tr>
+                <tr>
+                  <td>Alan</td>
+                  <td>Jellybean</td>
+                  <td>$3.76</td>
+                </tr>
+                <tr>
+                  <td>Jonathan</td>
+                  <td>Lollipop</td>
+                  <td>$7.00</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="divider"></div>
+        </main><!-- /main -->
+        <footer>
+          </footer><!-- /footer -->
+          <!-- jQuery -->
+          <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+          <!-- Materialize -->
+          <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+          <!-- javascript -->
+          <script>
+          $(".button-collapse").sideNav();
+          $("#flow-text-btn").click(function(){
+          $("#flow-text").toggleClass('flow-text');
+          })
+          </script>
+        </body>
+      </html>
